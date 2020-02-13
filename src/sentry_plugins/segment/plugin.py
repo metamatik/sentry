@@ -5,16 +5,31 @@ from sentry.plugins.bases.data_forwarding import DataForwardingPlugin
 
 from sentry_plugins.base import CorePluginMixin
 from sentry_plugins.utils import get_secret_field_config
+from sentry.integrations import FeatureDescription, IntegrationFeatures
+
+DESCRIPTION = """
+Send Sentry events to Segment.
+
+Segment is a customer data platform (CDP) that helps you collect, clean, and control your customer data.
+"""
 
 
 class SegmentPlugin(CorePluginMixin, DataForwardingPlugin):
     title = "Segment"
     slug = "segment"
-    description = "Send Sentry events into Segment."
+    description = DESCRIPTION
     conf_key = "segment"
     required_field = "write_key"
 
     endpoint = "https://api.segment.io/v1/track"
+    feature_descriptions = [
+        FeatureDescription(
+            """
+            Forward Sentry errors and events to Segment.
+            """,
+            IntegrationFeatures.DATA_FORWARDING,
+        )
+    ]
 
     def get_config(self, project, **kwargs):
         return [

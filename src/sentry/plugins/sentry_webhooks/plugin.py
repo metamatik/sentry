@@ -13,6 +13,10 @@ from sentry.plugins.bases import notify
 from sentry.http import is_valid_url, safe_urlopen
 from sentry.utils.safe import safe_execute
 
+DESCRIPTION = """
+Trigger outgoing HTTP POST requests from Sentry.
+"""
+
 
 def split_urls(value):
     if not value:
@@ -41,7 +45,7 @@ class WebHooksPlugin(notify.NotificationPlugin):
     author = "Sentry Team"
     author_url = "https://github.com/getsentry/sentry"
     version = sentry.VERSION
-    description = "Integrates web hooks."
+    description = DESCRIPTION
     resource_links = [
         ("Report Issue", "https://github.com/getsentry/sentry/issues"),
         (

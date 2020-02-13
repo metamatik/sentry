@@ -11,6 +11,7 @@ import {
 import space from 'app/styles/space';
 import withOrganization from 'app/utils/withOrganization';
 import AsyncComponent from 'app/components/asyncComponent';
+import marked from 'app/utils/marked';
 import PluginIcon from 'app/plugins/components/pluginIcon';
 import Tag from 'app/views/settings/components/tag';
 import Access from 'app/components/acl/access';
@@ -337,7 +338,7 @@ type InformationCardProps = {
 const InformationCard = ({children, plugin}: InformationCardProps) => {
   return (
     <React.Fragment>
-      <Description>{plugin.description}</Description>
+      <Description dangerouslySetInnerHTML={{__html: marked(plugin.description)}} />
       {children}
       <Metadata>
         {plugin.author && <AuthorName>{t('By %s', plugin.author.name)}</AuthorName>}
