@@ -81,14 +81,17 @@ class SentrySDistCommand(SDistCommand):
     # part of our source build pipeline.
     if not IS_LIGHT_BUILD:
         sub_commands = SDistCommand.sub_commands + \
-            [('build_integration_docs', None), ('build_assets', None)]
+            [
+                # ('build_integration_docs', None),
+                ('build_assets', None),
+            ]
 
 
 class SentryBuildCommand(BuildCommand):
     def run(self):
         BuildCommand.run(self)
         if not IS_LIGHT_BUILD:
-            self.run_command('build_integration_docs')
+            # self.run_command('build_integration_docs')
             self.run_command('build_assets')
 
 
@@ -96,7 +99,7 @@ class SentryDevelopCommand(DevelopCommand):
     def run(self):
         DevelopCommand.run(self)
         if not IS_LIGHT_BUILD:
-            self.run_command('build_integration_docs')
+            # self.run_command('build_integration_docs')
             self.run_command('build_assets')
 
 
@@ -105,7 +108,7 @@ cmdclass = {
     'develop': SentryDevelopCommand,
     'build': SentryBuildCommand,
     'build_assets': BuildAssetsCommand,
-    'build_integration_docs': BuildIntegrationDocsCommand,
+    # 'build_integration_docs': BuildIntegrationDocsCommand,
 }
 
 
