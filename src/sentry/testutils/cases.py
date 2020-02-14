@@ -32,7 +32,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpRequest
 from django.test import TestCase, TransactionTestCase
 from django.utils import timezone
-from django.utils.importlib import import_module
+from importlib import import_module
 from exam import before, fixture, Exam
 from mock import patch
 from pkg_resources import iter_entry_points

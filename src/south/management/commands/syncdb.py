@@ -46,7 +46,7 @@ class Command(NoArgsCommand):
         # dispatcher events.
         # This is copied from Django, to fix bug #511.
         try:
-            from django.utils.importlib import import_module
+            from importlib import import_module
         except ImportError:
             pass  # TODO: Remove, only for Django1.0
         else:

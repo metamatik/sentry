@@ -26,7 +26,7 @@ except ImportError:  # Django < 1.8
 try:
     from importlib import import_module
 except ImportError:  # python = 2.6
-    from django.utils.importlib import import_module  # NOQA
+    from importlib import import_module  # NOQA
 
 try:
     from collections import OrderedDict

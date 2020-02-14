@@ -59,7 +59,7 @@ class Importer(object):
 
     def _load_module(self, fullname):
         if self.default_settings:
-            from django.utils.importlib import import_module
+            from importlib import import_module
             default_settings_mod = import_module(self.default_settings)
         else:
             default_settings_mod = None
