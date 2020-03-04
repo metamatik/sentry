@@ -124,6 +124,9 @@ setup(
     packages=find_packages('src'),
     zip_safe=False,
     install_requires=install_requires,
+    dependency_links=[
+        'redis-py-cluster @ https://github.com/metamatik/redis-py-cluster.git/archive/scalingo.zip'
+    ],
     extras_require={
         'dev': dev_requires,
         'postgres': [],

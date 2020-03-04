@@ -61,5 +61,3 @@ ua-parser>=0.6.1,<0.8.0
 urllib3>=1.22,<1.23
 
 # uwsgi>2.0.0,<2.1.0
-
-git+git://github.com/metamatik/redis-py-cluster.git@scalingo#egg=redis-py-cluster
