@@ -17,6 +17,7 @@ djangorestframework>=2.4.8,<2.5.0
 email-reply-parser>=0.2.0,<0.3.0
 enum34>=0.9.18,<1.2.0
 exam>=0.5.1
+gunicorn==20.0.4
 
 # broken on python3
 hiredis>=0.1.0,<0.2.0
@@ -59,4 +60,5 @@ symbolic>=1.1.0,<2.0.0
 toronado>=0.0.11,<0.1.0
 ua-parser>=0.6.1,<0.8.0
 urllib3>=1.22,<1.23
-uwsgi>2.0.0,<2.1.0
+
+# uwsgi>2.0.0,<2.1.0
